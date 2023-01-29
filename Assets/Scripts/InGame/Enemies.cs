@@ -13,7 +13,6 @@ public class Enemies : MonoBehaviour
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
-       
 
     }
     void Start()
@@ -27,8 +26,8 @@ public class Enemies : MonoBehaviour
 
     void FixedUpdate()
     {
-        myBody.velocity = new Vector2(0f,-enemySpeed);
-     
+        myBody.velocity = new Vector2(0f, -enemySpeed);
+
     }
     void Shoot()
     {
@@ -38,11 +37,10 @@ public class Enemies : MonoBehaviour
     }
     IEnumerator EnemiesShoot()
     {
-        
-        yield return new WaitForSeconds(Random.Range(0.2f,1.0f));
+
+        yield return new WaitForSeconds(Random.Range(0.2f, 1.0f));
         this.Shoot();
         StartCoroutine(EnemiesShoot());
-       
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,10 +48,8 @@ public class Enemies : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-      
             Destroy(gameObject);
             scoreSystem.updateScore(5);
-      
         }
 
     }

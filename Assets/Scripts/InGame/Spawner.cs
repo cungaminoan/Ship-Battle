@@ -12,12 +12,10 @@ public class Spawner : MonoBehaviour
         box = GetComponent<BoxCollider2D>();
     }
 
-   void Start()
+    void Start()
     {
         StartCoroutine(SpawnEnemies());
     }
-
-
 
     IEnumerator SpawnEnemies()
     {
@@ -28,7 +26,5 @@ public class Spawner : MonoBehaviour
         temp.x = Random.Range(minX, maxX);
         Instantiate(enemies, temp, Quaternion.identity);
         StartCoroutine(SpawnEnemies());
-
-
     }
 }

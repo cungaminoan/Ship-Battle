@@ -12,12 +12,9 @@ public class EnemiesBullets : MonoBehaviour
         myBody = GetComponent<Rigidbody2D>();
     }
 
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         myBody.velocity = new Vector2(0f, -enemiesBulletSpeed);
-
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,9 +22,8 @@ public class EnemiesBullets : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-          
+            Debug.Log("Destroy Player");
             Destroy(gameObject);
-
         }
 
     }

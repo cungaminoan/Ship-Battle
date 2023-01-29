@@ -15,7 +15,7 @@ public class Ship : MonoBehaviour
         this.ShipMov();
     }
 
-    protected virtual void ShipMov()
+    protected void ShipMov()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
