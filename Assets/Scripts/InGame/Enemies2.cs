@@ -7,13 +7,15 @@ public class Enemies2 : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
     private bool moveRight;
     private Rigidbody2D myBody;
+    private ScoreSystem scoreSystem;
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
     }
-    private void Start()
+     void Start()
     {
         moveRight = true;
+        scoreSystem = GameObject.Find("GamePlayController").GetComponent<ScoreSystem>();
     }
     void Update()
     {
@@ -41,6 +43,7 @@ public class Enemies2 : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            scoreSystem.updateScore(10);
         }
 
     }

@@ -741,7 +741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -394, y: 194}
+  m_AnchoredPosition: {x: -406.4, y: 159.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &510401621
@@ -875,7 +875,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.296665
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1972,6 +1972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies2: {fileID: 10157168802958299, guid: 7e1de8f940a4c2c448f2cb39ce1a69e7, type: 3}
+  bulletsPool: {fileID: 0}
 --- !u!4 &1943426275
 Transform:
   m_ObjectHideFlags: 0
