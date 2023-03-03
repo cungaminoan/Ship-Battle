@@ -25,11 +25,16 @@ public class EnemiesBullets2Pool : MonoBehaviour
         {
             for (int i = 0; i < bullets.Count; i++)
             {
-                if (!bullets[i].activeInHierarchy)
+                if (bullets[i] != null && !bullets[i].activeInHierarchy)
                 {
                     return bullets[i];
                 }
             }
+        }
+
+        if (pooledBullet == null)
+        {
+            return null;
         }
 
         if (notEnoughBulletsInPool)
@@ -39,6 +44,9 @@ public class EnemiesBullets2Pool : MonoBehaviour
             bullets.Add(bul);
             return bul;
         }
-        return null;
+        else
+        {
+            return null;
+        }
     }
 }

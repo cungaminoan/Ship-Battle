@@ -5,12 +5,7 @@ using UnityEngine;
 public class FireBullets3 : MonoBehaviour
 {
     [SerializeField]
-    private int bulletsAmount = 10;
-
-    [SerializeField]
     private float angle = 0f;
-
-    private Vector2 bulletMoveDirection;
 
     //Start is called before the first frame update
     void Start()
@@ -35,5 +30,7 @@ public class FireBullets3 : MonoBehaviour
             bul.GetComponent<EnemiesBullets2>().SetMoveDirection(bulDir);
 
             angle += 10f;
+       
     }
+  
 }
