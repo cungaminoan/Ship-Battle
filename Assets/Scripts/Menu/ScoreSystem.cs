@@ -16,6 +16,7 @@ public class ScoreSystem : MonoBehaviour
    public void updateScore(int scoreToAdd)
     {
         score += scoreToAdd;
+
         scoreText.text = "Score: " + score;
     }
 }

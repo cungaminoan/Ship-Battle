@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner2 : MonoBehaviour
+public class Spawner3 : MonoBehaviour
 {
-    [SerializeField] private GameObject enemies2;
+    [SerializeField] private GameObject enemies3;
     private BoxCollider2D box;
 
     void Awake()
@@ -14,17 +14,17 @@ public class Spawner2 : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnEnemies2());
+        StartCoroutine(SpawnEnemies3());
     }
 
-    IEnumerator SpawnEnemies2()
+    IEnumerator SpawnEnemies3()
     {
         yield return new WaitForSeconds(Random.Range(4f, 8f));
         float minY = -box.size.y / 2f;
         float maxY = box.size.y / 2f;
         Vector3 temp = transform.position;
         temp.y = Random.Range(minY, maxY);
-        Instantiate(enemies2, temp, Quaternion.identity);
-        StartCoroutine(SpawnEnemies2());
+        Instantiate(enemies3, temp, Quaternion.identity);
+        StartCoroutine(SpawnEnemies3());
     }
 }
