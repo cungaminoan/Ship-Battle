@@ -14,7 +14,7 @@ public class EnemiesBullets : MonoBehaviour
 
     void FixedUpdate()
     {
-        myBody.velocity = new Vector2(0f, -enemiesBulletSpeed);
+        myBody.velocity = transform.right * enemiesBulletSpeed;
 
     }
     private void OnCollisionEnter2D(Collision2D collision)

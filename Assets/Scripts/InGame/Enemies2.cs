@@ -8,6 +8,7 @@ public class Enemies2 : MonoBehaviour
     private bool moveRight;
     private Rigidbody2D myBody;
     private ScoreSystem scoreSystem;
+    public int health;
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
@@ -38,14 +39,19 @@ public class Enemies2 : MonoBehaviour
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
-
     {
         if (collision.gameObject.tag == "Player")
+        {
+            DamageEnemy();
+        }
+    }
+    private void DamageEnemy()
+    {
+        health--;
+        if (health <= 0)
         {
             Destroy(gameObject);
             scoreSystem.updateScore(10);
         }
-
     }
-
 }

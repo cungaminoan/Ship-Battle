@@ -16,10 +16,16 @@ public class Bullets : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        myBody.velocity = new Vector2(0f, bulletSpeed);
+        myBody.velocity = transform.right* bulletSpeed;
 
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemies")
+        {
+            Destroy(gameObject);
+        }
+    }
     void OnBecameInvisible()
     {
         Destroy(gameObject);

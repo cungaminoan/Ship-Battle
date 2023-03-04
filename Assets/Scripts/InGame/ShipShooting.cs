@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ShipShooting : MonoBehaviour
 {
+    public Transform firePointCenter;
     [SerializeField] private GameObject bullets;
+    [SerializeField] private GameObject MuzzleFX;
     private bool canShoot = true;
    
     // Update is called once per frame
@@ -21,9 +23,8 @@ public class ShipShooting : MonoBehaviour
         IEnumerator Shoot()
         {
             canShoot = false;
-            Vector3 temp = transform.position;
-            temp.y+= 0.5f;
-            Instantiate(bullets, temp, Quaternion.identity);
+            Instantiate(MuzzleFX, firePointCenter.position, firePointCenter.rotation);
+            Instantiate(bullets, firePointCenter.position, firePointCenter.rotation);
             yield return new WaitForSeconds(0.2f);
             canShoot = true;
 

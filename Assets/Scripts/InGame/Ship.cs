@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    public static Ship instance;
     [SerializeField] private float shipSpeed;
     [SerializeField] private float shipTurnSpeed;
     private float horizontalInput;
     private float verticalInput;
     private Rigidbody2D myBody;
+    public SpriteRenderer shipSR;
 
+    private void Awake()
+    {
+        instance= this;
+    }
     private void FixedUpdate()
     {
         this.ShipMov();
@@ -29,8 +35,7 @@ public class Ship : MonoBehaviour
         if (collision.gameObject.tag == "Enemies")
         {
             //Debug.Log("Collision detected!");
-            Destroy(gameObject);
-            GameController.instance.ShipDead();
+            PlayerHealthManager.instance.DamagePlayer(); 
         }
 
     }
