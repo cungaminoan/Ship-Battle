@@ -36,6 +36,10 @@ public class Ship : MonoBehaviour
             //Debug.Log("Collision detected!");
             PlayerHealthManager.instance.DamagePlayer(); 
         }
+        else if (collision.gameObject.tag == "Enemy Bullets")
+        {
+            PlayerHealthManager.instance.DamagePlayer();
+        }
 
     }
 }

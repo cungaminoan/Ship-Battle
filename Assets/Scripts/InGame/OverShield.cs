@@ -31,6 +31,10 @@ public class OverShield : MonoBehaviour
 
             DamageShield();
         }
+        else if (collision.gameObject.tag == "Enemy Bullets" && invincible)
+        {
+            DamageShield();
+        }
     }
     private void DamageShield()
     {

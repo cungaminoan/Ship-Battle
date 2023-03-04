@@ -32,6 +32,9 @@ public class EnemiesBullets : MonoBehaviour
             Instantiate(ShieldHitFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

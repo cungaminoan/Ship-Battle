@@ -326,8 +326,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePointCenter: {fileID: 2680150306345455130}
+  firePointLeft: {fileID: 2680150304617622069}
+  firePointRight: {fileID: 2680150305245546682}
   bullets: {fileID: 110566686899345819, guid: 77a6996290e6fce45b72dc93296b92f8, type: 3}
+  rockets: {fileID: 3133062528626101714, guid: 7489552ce9788cc48b08a0de71df3740, type: 3}
   MuzzleFX: {fileID: 2791954120367390584, guid: 1f4d6077aea8e84418753fbbc62d4f4d, type: 3}
+  timeBetweenShots: 1
 --- !u!50 &2680150304822488835
 Rigidbody2D:
   serializedVersion: 4
