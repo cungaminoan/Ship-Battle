@@ -50,6 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  itemDropPercent: 0
+  itemsToDrop: []
+  ShieldHitFX: {fileID: 8981845894100129072, guid: b4c4983fd44b35848a21be5c9fa12502, type: 3}
   health: 3
 --- !u!114 &2785128142583045225
 MonoBehaviour:

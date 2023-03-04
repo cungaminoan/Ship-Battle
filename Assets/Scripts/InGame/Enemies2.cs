@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemies2 : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float itemDropPercent;
+    [SerializeField] private GameObject[] itemsToDrop;
+    [SerializeField] private GameObject ShieldHitFX;
     private bool moveRight;
     private Rigidbody2D myBody;
     private ScoreSystem scoreSystem;
@@ -40,10 +43,20 @@ public class Enemies2 : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player Bullets")
         {
             DamageEnemy();
         }
+        else if (collision.gameObject.tag == "Player Shield")
+        {
+            DamageEnemy();
+            Instantiate(ShieldHitFX, transform.position, Quaternion.identity);
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            DamageEnemy();
+        }
+
     }
     private void DamageEnemy()
     {
@@ -52,6 +65,14 @@ public class Enemies2 : MonoBehaviour
         {
             Destroy(gameObject);
             scoreSystem.updateScore(10);
+            float dropChance = Random.Range(0f, 100f);
+
+            if (dropChance < itemDropPercent)
+            {
+                int randomItem = Random.Range(0, itemsToDrop.Length);
+
+                Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+            }
         }
     }
 }

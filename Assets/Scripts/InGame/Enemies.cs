@@ -6,6 +6,9 @@ public class Enemies : MonoBehaviour
 {
     public Transform firePoint;
     [SerializeField] private float enemySpeed;
+    [SerializeField] private float itemDropPercent;
+    [SerializeField] private GameObject[] itemsToDrop;
+    [SerializeField] private GameObject ShieldHitFX;
     private Rigidbody2D myBody;
     [SerializeField] private GameObject bullets;
     private ScoreSystem scoreSystem;
@@ -64,10 +67,20 @@ public class Enemies : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player Bullets")
         {
             DamageEnemy();
         }
+        else if (collision.gameObject.tag == "Player Shield")
+        {
+            DamageEnemy();
+            Instantiate(ShieldHitFX, transform.position, Quaternion.identity);
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            DamageEnemy();
+        }
+
     }
     private void DamageEnemy()
     {
@@ -76,6 +89,14 @@ public class Enemies : MonoBehaviour
         {
             Destroy(gameObject);
             scoreSystem.updateScore(5);
+            float dropChance = Random.Range(0f, 100f);
+
+            if (dropChance < itemDropPercent)
+            {
+                int randomItem = Random.Range(0, itemsToDrop.Length);
+
+                Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+            }
         }
     }
 }

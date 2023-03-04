@@ -173,6 +173,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 8657999143560977671}
   enemySpeed: 4
+  itemDropPercent: 100
+  itemsToDrop:
+  - {fileID: 7564894205785636649, guid: 11bdc2440d650ee43be7b7049996135b, type: 3}
+  ShieldHitFX: {fileID: 8981845894100129072, guid: b4c4983fd44b35848a21be5c9fa12502, type: 3}
   bullets: {fileID: 978356317248075474, guid: 5414a9eacdc573543960e11074edb7c4, type: 3}
   timeBetweenBurst: 3
   BurstSize: 2

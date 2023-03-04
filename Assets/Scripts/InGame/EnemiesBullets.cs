@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemiesBullets : MonoBehaviour
 {
     [SerializeField] private float enemiesBulletSpeed;
+    [SerializeField] private GameObject ShieldHitFX;
     private Rigidbody2D myBody;
 
     private void Awake()
@@ -22,7 +23,13 @@ public class EnemiesBullets : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Destroy Player");
+            Debug.Log("Player Hit");
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Player Shield")
+        {
+            Debug.Log("Not Player Hit");
+            Instantiate(ShieldHitFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
