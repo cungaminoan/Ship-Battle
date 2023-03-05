@@ -24,6 +24,7 @@ public class WrenchPickup : MonoBehaviour
     {
         if (other.tag == "Player" && waitToBeCollected <= 0)
         {
+            if (PlayerHealthManager.instance.currentHealth < 4)
             PlayerHealthManager.instance.HealPlayer();
             Destroy(gameObject);
         }

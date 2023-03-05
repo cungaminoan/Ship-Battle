@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponUpgrade : MonoBehaviour
+public class PilotPickUp : MonoBehaviour
 {
     private float waitToBeCollected = 0.5f;
+    private PowerUpSystem pilotsHere;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pilotsHere = GameObject.Find("GamePlayController").GetComponent<PowerUpSystem>();
     }
 
     // Update is called once per frame
@@ -23,9 +24,12 @@ public class WeaponUpgrade : MonoBehaviour
     {
         if (other.tag == "Player" && waitToBeCollected <= 0)
         {
-            if (PowerUpManager.instance.weaponLvl < 6)
-            PowerUpManager.instance.weaponUpgrade();
-            Destroy(gameObject);
+            if (PowerUpManager.instance.currentPilotAction==0)
+            {
+                pilotsHere.pilotIcon(1);
+                PowerUpManager.instance.currentPilotAction = 1;
+                Destroy(gameObject);
+            }
         }
     }
 }

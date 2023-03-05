@@ -9,13 +9,15 @@ public class Rockets : MonoBehaviour
     private float speed = 6;
     private float angleChangingSpeed = 400;  // OP MISSILES :D
     [SerializeField] private Rigidbody2D RocketRGBody;
+    [SerializeField] private GameObject xplosionFX;
     private Quaternion rotatetoTarget;
     
     // Start is called before the first frame update
     void Start()
     { 
             target = findClosestEnemy().transform;
-            Destroy(gameObject, 3f); // Auto explodes 3 seconds after launching
+            Destroy(gameObject, 3.5f); // Auto explodes 3 seconds after launching
+            
     }
 
     // Update is called once per frame
@@ -60,8 +62,9 @@ public class Rockets : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemies")
         {
-            Debug.Log("Player Hit");
+            Debug.Log("Missile Hit");
             Destroy(gameObject);
+            Instantiate(xplosionFX, transform.position, Random.rotation);
         }
     }
 }

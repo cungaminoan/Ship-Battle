@@ -8,6 +8,7 @@ TagManager:
   - Player Bullets
   - Player Shield
   - Enemy Bullets
+  - Player Companions
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player Bullets
   - Enemy Bullets
   - Player Shield
-  - 
+  - Sonic Blast
   - 
   - 
   - 

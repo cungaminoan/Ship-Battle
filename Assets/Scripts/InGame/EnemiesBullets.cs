@@ -28,8 +28,13 @@ public class EnemiesBullets : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Player Shield")
         {
-            Debug.Log("Not Player Hit");
+            Debug.Log("Player Shield Hit");
             Instantiate(ShieldHitFX, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        else 
+        {
+            Debug.Log("Non-player Hit");
             Destroy(gameObject);
         }
     }

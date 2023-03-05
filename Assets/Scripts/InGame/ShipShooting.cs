@@ -10,6 +10,7 @@ public class ShipShooting : MonoBehaviour
     [SerializeField] private GameObject bullets;
     [SerializeField] private GameObject rockets;
     [SerializeField] private GameObject MuzzleFX;
+    [SerializeField] private GameObject MuzzleFX2;
     //private bool canShoot = true;
     public float timeBetweenShots;
     private float shotCount;
@@ -59,7 +60,7 @@ public class ShipShooting : MonoBehaviour
             if (rocketCount <= 0)
             {
                 rocketCount = 2f;
-                Instantiate(MuzzleFX, firePointCenter.position, firePointCenter.rotation);
+                Instantiate(MuzzleFX2, firePointCenter.position, firePointCenter.rotation);
                 Debug.Log("MuzzleFX ");
                 Instantiate(rockets, firePointCenter.position, firePointCenter.rotation);
                 Debug.Log("Homing Missile Launched");
@@ -77,7 +78,7 @@ public class ShipShooting : MonoBehaviour
             case 2:
                 Instantiate(MuzzleFX, firePointCenter.position, firePointCenter.rotation);
                 Instantiate(bullets, firePointCenter.position, firePointCenter.rotation);
-                timeBetweenShots = 0.7f;
+                timeBetweenShots = 0.6f;
                 break;
             case 3:
                 Instantiate(MuzzleFX, firePointLeft.position, firePointLeft.rotation);
@@ -90,7 +91,7 @@ public class ShipShooting : MonoBehaviour
                 Instantiate(bullets, firePointLeft.position, firePointLeft.rotation);
                 Instantiate(MuzzleFX, firePointRight.position, firePointRight.rotation);
                 Instantiate(bullets, firePointRight.position, firePointRight.rotation);
-                timeBetweenShots = 0.5f;
+                timeBetweenShots = 0.45f;
                 break;
             case 5:
                 Instantiate(MuzzleFX, firePointCenter.position, firePointCenter.rotation);
@@ -101,7 +102,7 @@ public class ShipShooting : MonoBehaviour
                 Instantiate(bullets, firePointRight.position, firePointRight.rotation);
                 break;   
               case 6:
-                timeBetweenShots = 0.325f;
+                timeBetweenShots = 0.28f;
                 Instantiate(MuzzleFX, firePointLeft.position, firePointLeft.rotation);
                 Instantiate(bullets, firePointLeft.position, firePointLeft.rotation);
                 Instantiate(MuzzleFX, firePointRight.position, firePointRight.rotation);

@@ -138,6 +138,7 @@ MonoBehaviour:
   itemsToDrop:
   - {fileID: 7564894205785636649, guid: 11bdc2440d650ee43be7b7049996135b, type: 3}
   - {fileID: 7749292132038435785, guid: 2c1c146221b9a0e42a8e1a0b913b715f, type: 3}
+  - {fileID: 4695601652951303746, guid: 2bd56c2d9b4d569429abba57b8eb88fb, type: 3}
   ShieldHitFX: {fileID: 8981845894100129072, guid: b4c4983fd44b35848a21be5c9fa12502, type: 3}
   bullets: {fileID: 978356317248075474, guid: 5414a9eacdc573543960e11074edb7c4, type: 3}
   timeBetweenBurst: 3

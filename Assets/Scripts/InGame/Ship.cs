@@ -7,18 +7,32 @@ public class Ship : MonoBehaviour
     public static Ship instance;
     [SerializeField] private float shipSpeed;
     [SerializeField] private float shipTurnSpeed;
+    [SerializeField] private GameObject shockBlast;
+
+    private PowerUpSystem AbilityIcon;
+    private float cooldown;
     private float horizontalInput;
     private float verticalInput;
     private Rigidbody2D myBody;
     public SpriteRenderer shipSR;
+    public bool abilityActive = true;
 
     private void Awake()
     {
         instance= this;
     }
-    private void FixedUpdate()
+    private void Start()
+    {
+        AbilityIcon = GameObject.Find("GamePlayController").GetComponent<PowerUpSystem>();
+    }
+    private void Update()
     {
         this.ShipMov();
+        this.ShipDefend();
+        if (cooldown <=0 ) 
+        { 
+            abilityActive = true; 
+        }
     }
 
     protected void ShipMov()
@@ -27,6 +41,23 @@ public class Ship : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector2.up * Time.deltaTime * shipSpeed * verticalInput);
         transform.Translate(Vector2.right * Time.deltaTime * shipTurnSpeed * horizontalInput);
+    }
+    // The ability to defend the ship. As of now, it's an shockwave blast :D
+    protected void ShipDefend()
+    {
+        if (cooldown > 0)
+        {
+            cooldown -= Time.deltaTime;
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+        // Ability here
+        cooldown = 15f;
+        Debug.Log("Shock wave cool down");
+        Instantiate(shockBlast, transform.position, transform.rotation);
+        AbilityIcon.AbilityIcon();
+        abilityActive = false;
+        }
     }
     
     private void OnCollisionEnter2D(Collision2D collision)

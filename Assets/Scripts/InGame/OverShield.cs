@@ -6,7 +6,7 @@ public class OverShield : MonoBehaviour
 {
     [SerializeField] private Animator Anim;
     private bool invincible = false; // skips a " ! " :D
-    private int health = 15;
+    private int health = 3;
     // Start is called before the first frame update
     void Start()
     {

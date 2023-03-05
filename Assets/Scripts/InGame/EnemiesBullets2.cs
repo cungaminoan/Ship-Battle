@@ -42,6 +42,11 @@ public class EnemiesBullets2 : MonoBehaviour
             Instantiate(ShieldHitFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+        else
+        {
+            Debug.Log("Non-player Hit");
+            Destroy(gameObject);
+        }
 
     }
 }

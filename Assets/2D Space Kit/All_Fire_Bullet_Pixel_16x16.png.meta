@@ -218,7 +218,7 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,6 +226,132 @@ TextureImporter:
       bones: []
       spriteID: 7e428adca04a84a42b4813f81536f211
       internalID: -263804718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonicblast_0
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 151
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d061e2ffda1634bbf0060cd0effef2
+      internalID: -122124774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sonicblast_1
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 150
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5147a70d3bf81945951f8395113cd71
+      internalID: 1462059442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pilot_bullet_0
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 309
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd084e3685906b14abd7c5059629e8e1
+      internalID: 1276860847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pilot_bullet_1
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 309
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1678b8d5f73b8cd42afa50ef43a60048
+      internalID: -406721636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pilot_bullet_2
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 309
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4132c32ed940004f9aefd2abb4ec0f6
+      internalID: -722424577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pilot_bullet_3
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 309
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e65145e4a86caf44876fb183d9ac298
+      internalID: 1126430638
       vertices: []
       indices: 
       edges: []
@@ -241,12 +367,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      sonicblast_1: 1462059442
       round_fire_1: 1148468564
       round_fire_3: -263804718
+      sonicblast_0: -122124774
+      pilot_bullet_2: -722424577
       basic_small_bullet: -767571775
+      pilot_bullet_0: 1276860847
       basic_bullet: -674176297
       round_fire_2: 1726027249
       round_fire_0: 119663921
+      pilot_bullet_3: 1126430638
+      pilot_bullet_1: -406721636
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
