@@ -51,8 +51,8 @@ public class Ship : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
-        // Ability here
-        cooldown = 15f;
+        // Ability here 
+        cooldown = 8f; 
         Debug.Log("Shock wave cool down");
         Instantiate(shockBlast, transform.position, transform.rotation);
         AbilityIcon.AbilityIcon();

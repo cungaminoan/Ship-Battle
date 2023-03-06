@@ -21,12 +21,12 @@ public class BeamEnemy : MonoBehaviour
     private float fireCounter;
    
     [SerializeField] private Transform firePoint;
-    
+    [SerializeField] private GameObject xplosionFX;
     [SerializeField] private GameObject muzzleFX;
     // Start is called before the first frame update
     void Start()
     {
-        health = 5;
+        health = 3;
         isBeaming = false;
         actionCounter = beamActions[currentAction].actionLength;
         stalkRange = 3.5f;
@@ -159,7 +159,8 @@ public class BeamEnemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            scoreSystem.updateScore(5);
+            Instantiate(xplosionFX, transform.position, Random.rotation);
+            scoreSystem.updateScore(20);
             float dropChance = Random.Range(0f, 100f);
 
             if (dropChance < itemDropPercent)

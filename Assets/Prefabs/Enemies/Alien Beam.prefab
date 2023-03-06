@@ -262,7 +262,7 @@ MonoBehaviour:
     burstSize: 100
     muzzlePoint: {fileID: 4733180884162032243}
   BeamEnemyRB: {fileID: 4733180883352764383}
-  itemDropPercent: 40
+  itemDropPercent: 100
   itemsToDrop:
   - {fileID: 1895776478728889177, guid: 2bd56c2d9b4d569429abba57b8eb88fb, type: 3}
   - {fileID: 7564894205785636649, guid: 11bdc2440d650ee43be7b7049996135b, type: 3}
@@ -272,6 +272,7 @@ MonoBehaviour:
   ShieldHitFX: {fileID: 8981845894100129072, guid: b4c4983fd44b35848a21be5c9fa12502, type: 3}
   isBeaming: 0
   firePoint: {fileID: 4733180883200297581}
+  xplosionFX: {fileID: 7577774635755339760, guid: 9adbed5b8f56b07418c9b966fd850073, type: 3}
   muzzleFX: {fileID: 6323908280504336212, guid: 1667ca1c43b2e6d408f13b32200be84b, type: 3}
 --- !u!1 &4733180884162032240
 GameObject:

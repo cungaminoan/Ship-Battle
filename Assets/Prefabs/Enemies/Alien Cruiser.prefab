@@ -57,7 +57,8 @@ MonoBehaviour:
   - {fileID: 7564894205785636649, guid: 11bdc2440d650ee43be7b7049996135b, type: 3}
   - {fileID: 1895776478728889177, guid: 2bd56c2d9b4d569429abba57b8eb88fb, type: 3}
   ShieldHitFX: {fileID: 8981845894100129072, guid: b4c4983fd44b35848a21be5c9fa12502, type: 3}
-  health: 3
+  xplosionFX: {fileID: 7577774635755339760, guid: 9adbed5b8f56b07418c9b966fd850073, type: 3}
+  health: 2
 --- !u!114 &2785128142583045225
 MonoBehaviour:
   m_ObjectHideFlags: 0

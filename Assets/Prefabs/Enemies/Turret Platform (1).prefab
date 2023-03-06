@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1543870357
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 76b0aac3cf1d96c4dbe96461a16846a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -128,10 +128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  itemDropPercent: 0
-  itemsToDrop: []
-  ShieldHitFX: {fileID: 0}
-  health: 0
+  itemDropPercent: 50
+  itemsToDrop:
+  - {fileID: 7749292132038435785, guid: 2c1c146221b9a0e42a8e1a0b913b715f, type: 3}
+  - {fileID: 7564894205785636649, guid: 11bdc2440d650ee43be7b7049996135b, type: 3}
+  - {fileID: 1895776478728889177, guid: 2bd56c2d9b4d569429abba57b8eb88fb, type: 3}
+  ShieldHitFX: {fileID: 8981845894100129072, guid: b4c4983fd44b35848a21be5c9fa12502, type: 3}
+  xplosionFX: {fileID: 7577774635755339760, guid: 9adbed5b8f56b07418c9b966fd850073, type: 3}
+  health: 1
 --- !u!60 &-3823004906598753367
 PolygonCollider2D:
   m_ObjectHideFlags: 0

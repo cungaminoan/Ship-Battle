@@ -37,7 +37,7 @@ public class PowerUpSystem : MonoBehaviour
     private IEnumerator flashIcon()
     {
         // Flashes the Ability Icon 20 times = 20 seconds in total?
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 8; i++)
         {
             abilityImage.color = new Color(1f, 1f, 1f, 0.5f);
             yield return new WaitForSeconds(0.5f);

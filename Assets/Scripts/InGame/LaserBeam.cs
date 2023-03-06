@@ -41,9 +41,9 @@ public class LaserBeam : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void AnimationEnd()
-    {
-        Destroy(gameObject);
-    }
+    //private void AnimationEnd()
+    //{
+    //    Destroy(gameObject);
+    //}
 
 }

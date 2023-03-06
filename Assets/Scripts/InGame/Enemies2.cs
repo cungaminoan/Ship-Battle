@@ -8,6 +8,7 @@ public class Enemies2 : MonoBehaviour
     [SerializeField] private float itemDropPercent;
     [SerializeField] private GameObject[] itemsToDrop;
     [SerializeField] private GameObject ShieldHitFX;
+    [SerializeField] private GameObject xplosionFX;
     private bool moveRight;
     private Rigidbody2D myBody;
     private ScoreSystem scoreSystem;
@@ -65,6 +66,7 @@ public class Enemies2 : MonoBehaviour
         {
             Destroy(gameObject);
             scoreSystem.updateScore(10);
+            Instantiate(xplosionFX, transform.position, Random.rotation);
             float dropChance = Random.Range(0f, 100f);
 
             if (dropChance < itemDropPercent)

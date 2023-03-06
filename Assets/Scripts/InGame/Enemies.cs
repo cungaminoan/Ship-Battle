@@ -10,11 +10,16 @@ public class Enemies : MonoBehaviour
     public float magnitude = 0.5f;   // Size of sin movement
     private Vector3 axis;
     private Vector3 pos;
+    private float startTime;
+    private float elaspedTime;
+
+    private int ZicZac;
 
     [SerializeField] private float enemySpeed;
     [SerializeField] private float itemDropPercent;
     [SerializeField] private GameObject[] itemsToDrop;
     [SerializeField] private GameObject ShieldHitFX;
+    [SerializeField] private GameObject xplosionFX;
     private Rigidbody2D myBody;
     [SerializeField] private GameObject bullets;
     private ScoreSystem scoreSystem;
@@ -23,7 +28,7 @@ public class Enemies : MonoBehaviour
     public int BurstSize;
     public float fireRate;
     public int health;
-    private Vector2 moveDir;
+    
 
 
     void Awake()
@@ -32,22 +37,31 @@ public class Enemies : MonoBehaviour
     }
     void Start()
     {
-
-    //    StartCoroutine(EnemiesShoot());
+        //  StartCoroutine(EnemiesShoot());
+        ZicZac = Random.Range(0, 2);
         scoreSystem = GameObject.Find("GamePlayController").GetComponent<ScoreSystem>();
-       // pos = transform.position;
+        pos = transform.position;
         axis = transform.right;
+        startTime = Time.time;
 
     }
 
     private void Update()
     {
 
-       // myBody.velocity = new Vector2(0f, -enemySpeed);
-        pos += transform.up * Time.deltaTime * -enemySpeed;
-        transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
-        moveDir = transform.position- pos;
-        myBody.velocity = moveDir;
+       if (ZicZac == 1) 
+       {
+            pos += transform.up * Time.deltaTime * -enemySpeed;
+            elaspedTime = Time.time - startTime;
+            transform.position = pos + axis * Mathf.Sin(elaspedTime * frequency) * magnitude;
+       }
+       else
+        {
+            enemySpeed = 4f;
+            myBody.velocity = new Vector2(0f, -enemySpeed);  // Goes downward on the Y axis
+        }
+        
+       
         fireCounter -= Time.deltaTime;
         if (fireCounter <= 0)
         {
@@ -102,6 +116,7 @@ public class Enemies : MonoBehaviour
         {
             Destroy(gameObject);
             scoreSystem.updateScore(5);
+            Instantiate(xplosionFX, transform.position, Random.rotation);
             float dropChance = Random.Range(0f, 100f);
 
             if (dropChance < itemDropPercent)

@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
-
+    [SerializeField] private GameObject pausePannel, gameOverPannel;
+    private bool isPaused;
     private void Awake()
     {
         MakeInstance();
@@ -17,17 +18,41 @@ public class GameController : MonoBehaviour
         if (instance == null)
             instance = this;
     }    
-    [SerializeField]private GameObject pausePannel, gameOverPannel;
+    
 
-    public void PauseGameButton()
+    private void Update()
     {
-        pausePannel.SetActive(true);
-        Time.timeScale = 0f;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseUnPause();
+        }
+        if(gameOverPannel.activeSelf && Input.GetKeyDown(KeyCode.Space)) 
+        {
+            RestartButton(); // Behaves simillar to the button :D
+        }
+    }
+    public void PauseUnPause()
+    {
+        if (!isPaused)
+        {
+            pausePannel.SetActive(true);
+
+            isPaused = true;
+
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            pausePannel.SetActive(false);
+
+            isPaused = false;
+
+            Time.timeScale = 1f;
+        }
     }
     public void ResumeButton()
     {
-        pausePannel.SetActive(false);
-        Time.timeScale = 1f;
+        PauseUnPause();
     }
     public void RestartButton()
     {
@@ -42,6 +67,7 @@ public class GameController : MonoBehaviour
     public void ExitButton()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
 
 

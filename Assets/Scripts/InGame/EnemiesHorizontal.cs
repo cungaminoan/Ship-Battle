@@ -9,7 +9,7 @@ public class EnemiesHorizontal : MonoBehaviour
     [SerializeField] private float itemDropPercent;
     [SerializeField] private GameObject[] itemsToDrop;
     [SerializeField] private GameObject ShieldHitFX;
-
+    [SerializeField] private GameObject xplosionFX;
     [SerializeField]private bool Right;
     private Rigidbody2D myBody;
     [SerializeField] private GameObject bullets;
@@ -39,12 +39,12 @@ public class EnemiesHorizontal : MonoBehaviour
         if (Right)
         {
             myBody.velocity = new Vector2(enemySpeed, 0f);
-            transform.localScale = new Vector2(-1f, 1f); // Flip the sprite to the Right
+            
         }
         else
         {
             myBody.velocity = new Vector2(-enemySpeed, 0f); // Move to the left ( negative X)
-            transform.localScale = Vector2.one; 
+           
         }
     ////////////////////////////////////////////////////////////////////////////////////////////
             fireCounter -= Time.deltaTime;
@@ -88,6 +88,7 @@ public class EnemiesHorizontal : MonoBehaviour
         {
             Destroy(gameObject);
             scoreSystem.updateScore(5);
+            Instantiate(xplosionFX, transform.position, Random.rotation);
             float dropChance = Random.Range(0f, 100f);
 
             if (dropChance < itemDropPercent)
