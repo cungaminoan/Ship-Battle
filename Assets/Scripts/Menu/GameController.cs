@@ -39,7 +39,10 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         gameOverPannel.SetActive(true);
     }
-    
+    public void ExitButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
 
 }

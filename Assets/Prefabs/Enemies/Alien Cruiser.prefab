@@ -50,9 +50,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520d880f47282c043877c2026df07d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  itemDropPercent: 0
-  itemsToDrop: []
+  moveSpeed: 2
+  itemDropPercent: 70
+  itemsToDrop:
+  - {fileID: 1895776478728889177, guid: 2bd56c2d9b4d569429abba57b8eb88fb, type: 3}
+  - {fileID: 7564894205785636649, guid: 11bdc2440d650ee43be7b7049996135b, type: 3}
+  - {fileID: 1895776478728889177, guid: 2bd56c2d9b4d569429abba57b8eb88fb, type: 3}
   ShieldHitFX: {fileID: 8981845894100129072, guid: b4c4983fd44b35848a21be5c9fa12502, type: 3}
   health: 3
 --- !u!114 &2785128142583045225
@@ -180,7 +183,7 @@ GameObject:
   - component: {fileID: 3409801602881743871}
   m_Layer: 7
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

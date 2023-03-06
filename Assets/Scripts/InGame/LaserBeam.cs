@@ -2,43 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemiesBullets2 : MonoBehaviour
+public class LaserBeam : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float enemiesBulletSpeed;
     [SerializeField] private GameObject ShieldHitFX;
-    private Vector2 moveDirection;
-    private void OnEnable()
-    {
-        Invoke("Destroy", 5f);
-    }
-    void Update()
-    {
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
-    }
-    public void SetMoveDirection(Vector2 dir)
-    {
-        moveDirection = dir;
+    private Rigidbody2D myBody;
 
-    }
-    private void Destroy()
+    private void Awake()
     {
-        Destroy(gameObject);
+        myBody = GetComponent<Rigidbody2D>();
     }
-    private void OnDisable()
+    private void Start()
     {
-        CancelInvoke();
+        Destroy(gameObject, 1f);
+    }
+    void FixedUpdate()
+    {
+        myBody.velocity = transform.right * enemiesBulletSpeed;
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
 
     {
         if (collision.gameObject.tag == "Player")
         {
-            //Debug.Log("Player Hit");
+            Debug.Log("Player Hit");
             Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Player Shield")
         {
-            //Debug.Log("Not Player Hit");
+            Debug.Log("Player Shield Hit");
             Instantiate(ShieldHitFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -47,6 +40,10 @@ public class EnemiesBullets2 : MonoBehaviour
             Debug.Log("Non-player Hit");
             Destroy(gameObject);
         }
-
     }
+    private void AnimationEnd()
+    {
+        Destroy(gameObject);
+    }
+
 }

@@ -13,7 +13,7 @@ public class Ship : MonoBehaviour
     private float cooldown;
     private float horizontalInput;
     private float verticalInput;
-    private Rigidbody2D myBody;
+    public Rigidbody2D myBody;
     public SpriteRenderer shipSR;
     public bool abilityActive = true;
 

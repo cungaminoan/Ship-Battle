@@ -1,20 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
-public class Enemies : MonoBehaviour
+public class EnemiesHorizontal : MonoBehaviour
 {
     public Transform firePoint;
-    public float frequency = 20.0f;  // Speed of sin movement
-    public float magnitude = 0.5f;   // Size of sin movement
-    private Vector3 axis;
-    private Vector3 pos;
-
     [SerializeField] private float enemySpeed;
     [SerializeField] private float itemDropPercent;
     [SerializeField] private GameObject[] itemsToDrop;
     [SerializeField] private GameObject ShieldHitFX;
+
+    [SerializeField]private bool Right;
     private Rigidbody2D myBody;
     [SerializeField] private GameObject bullets;
     private ScoreSystem scoreSystem;
@@ -23,7 +19,7 @@ public class Enemies : MonoBehaviour
     public int BurstSize;
     public float fireRate;
     public int health;
-    private Vector2 moveDir;
+
 
 
     void Awake()
@@ -33,49 +29,39 @@ public class Enemies : MonoBehaviour
     void Start()
     {
 
-    //    StartCoroutine(EnemiesShoot());
+        //    StartCoroutine(EnemiesShoot());
         scoreSystem = GameObject.Find("GamePlayController").GetComponent<ScoreSystem>();
-       // pos = transform.position;
-        axis = transform.right;
 
     }
 
     private void Update()
     {
-
-       // myBody.velocity = new Vector2(0f, -enemySpeed);
-        pos += transform.up * Time.deltaTime * -enemySpeed;
-        transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
-        moveDir = transform.position- pos;
-        myBody.velocity = moveDir;
-        fireCounter -= Time.deltaTime;
+        if (Right)
+        {
+            myBody.velocity = new Vector2(enemySpeed, 0f);
+            transform.localScale = new Vector2(-1f, 1f); // Flip the sprite to the Right
+        }
+        else
+        {
+            myBody.velocity = new Vector2(-enemySpeed, 0f); // Move to the left ( negative X)
+            transform.localScale = Vector2.one; 
+        }
+    ////////////////////////////////////////////////////////////////////////////////////////////
+            fireCounter -= Time.deltaTime;
         if (fireCounter <= 0)
         {
             fireCounter = timeBetweenBurst;
             StartCoroutine(BrstFire(BurstSize));
         }
-        
+
     }
-    //void FixedUpdate()
-    //{
-    //    myBody.velocity = new Vector2(0f, -enemySpeed);
-    //}
-    //void Shoot()
-    //{
-    //    Instantiate(bullets, firePoint.position, firePoint.rotation);
-    //}
-    //IEnumerator EnemiesShoot()
-    //{
-    //    yield return new WaitForSeconds(Random.Range(0.2f, 1.0f));
-    //    this.Shoot();
-    //    StartCoroutine(EnemiesShoot());
-    //}
-    private IEnumerator BrstFire (int BurstSize)
+    
+    private IEnumerator BrstFire(int BurstSize)
     {
         for (int i = 0; i < BurstSize; i++)
         {
             Instantiate(bullets, firePoint.position, firePoint.rotation);
-            yield return new WaitForSeconds(60f/fireRate);
+            yield return new WaitForSeconds(60f / fireRate);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -97,7 +83,7 @@ public class Enemies : MonoBehaviour
     }
     private void DamageEnemy()
     {
-        health --;
+        health--;
         if (health <= 0)
         {
             Destroy(gameObject);

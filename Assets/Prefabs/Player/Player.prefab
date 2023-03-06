@@ -41,8 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2680150304644777654}
   - component: {fileID: 2680150304644777659}
-  - component: {fileID: 2680150304644777652}
-  - component: {fileID: 2680150304644777653}
+  - component: {fileID: 28587227265417400}
   m_Layer: 6
   m_Name: Ship
   m_TagString: Player
@@ -121,8 +120,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &2680150304644777652
-PolygonCollider2D:
+--- !u!61 &28587227265417400
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,7 +133,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.001946032, y: 0.11092463}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -144,91 +143,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.12, y: -1.025}
-      - {x: 0.14999999, y: -1.285}
-      - {x: 0.17, y: -1.295}
-      - {x: 0.25, y: -1.295}
-      - {x: 0.26999998, y: -1.245}
-      - {x: 0.34, y: -0.825}
-      - {x: 0.39, y: -0.715}
-      - {x: 0.52, y: -0.705}
-      - {x: 0.58, y: -0.955}
-      - {x: 0.61, y: -1.035}
-      - {x: 0.90999997, y: -1.015}
-      - {x: 0.93, y: -0.695}
-      - {x: 1.3199999, y: -0.705}
-      - {x: 1.3299999, y: -0.705}
-      - {x: 1.3299999, y: -0.39499998}
-      - {x: 0.94, y: -0.16499999}
-      - {x: 0.91999996, y: 0.005}
-      - {x: 0.68, y: 0.235}
-      - {x: 0.52, y: 0.225}
-      - {x: 0.39, y: 0.225}
-      - {x: 0.17, y: 0.45499998}
-      - {x: 0.19999999, y: 0.60499996}
-      - {x: 0.35, y: 0.565}
-      - {x: 0.35999998, y: 0.635}
-      - {x: 0.35999998, y: 1.005}
-      - {x: 0.32999998, y: 1.0649999}
-      - {x: 0.31, y: 1.2149999}
-      - {x: 0.29, y: 1.255}
-      - {x: 0.22, y: 1.185}
-      - {x: 0.16, y: 0.92499995}
-      - {x: 0.17, y: 1.2049999}
-      - {x: 0.11, y: 1.295}
-      - {x: -0.099999994, y: 1.295}
-      - {x: -0.17, y: 1.2049999}
-      - {x: -0.21, y: 1.035}
-      - {x: -0.22999999, y: 1.245}
-      - {x: -0.25, y: 1.265}
-      - {x: -0.28, y: 1.255}
-      - {x: -0.28, y: 1.275}
-      - {x: -0.29999998, y: 1.295}
-      - {x: -0.32999998, y: 1.285}
-      - {x: -0.35999998, y: 1.005}
-      - {x: -0.35999998, y: 0.635}
-      - {x: -0.32999998, y: 0.60499996}
-      - {x: -0.21, y: 0.59499997}
-      - {x: -0.16, y: 0.445}
-      - {x: -0.38, y: 0.21499999}
-      - {x: -0.39999998, y: 0.105}
-      - {x: -0.51, y: 0.235}
-      - {x: -0.68, y: 0.235}
-      - {x: -0.91999996, y: -0.035}
-      - {x: -1.03, y: -0.235}
-      - {x: -1.3299999, y: -0.405}
-      - {x: -1.3299999, y: -0.72499996}
-      - {x: -1.06, y: -0.705}
-      - {x: -0.90999997, y: -0.805}
-      - {x: -0.90999997, y: -0.955}
-      - {x: -0.87, y: -1.015}
-      - {x: -0.61, y: -1.025}
-      - {x: -0.57, y: -0.965}
-      - {x: -0.45, y: -0.635}
-      - {x: -0.44, y: -0.42499998}
-      - {x: -0.41, y: -0.715}
-      - {x: -0.31, y: -1.025}
-      - {x: -0.26999998, y: -1.285}
-      - {x: -0.25, y: -1.295}
-      - {x: -0.16, y: -1.295}
-      - {x: -0.14999999, y: -1.285}
-      - {x: -0.06, y: -0.755}
-      - {x: 0.11, y: -0.865}
---- !u!114 &2680150304644777653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2680150304644777655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3565f5b208c35a47a77f15d7cd9733e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.6683394, y: 1.7469726}
+  m_EdgeRadius: 0
 --- !u!1 &2680150304800476191
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,8 +191,9 @@ GameObject:
   - component: {fileID: 2680150304822488832}
   - component: {fileID: 2680150304822488833}
   - component: {fileID: 2680150304822488834}
-  - component: {fileID: 2680150304822488835}
-  m_Layer: 0
+  - component: {fileID: 6799997554702260712}
+  - component: {fileID: 2983692838829033002}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -313,6 +231,7 @@ MonoBehaviour:
   shipSpeed: 5
   shipTurnSpeed: 5
   shockBlast: {fileID: 2698760415288821340, guid: 2a941e0449d08744daf079cfb17a7a6f, type: 3}
+  myBody: {fileID: 2983692838829033002}
   shipSR: {fileID: 2680150304644777659}
   abilityActive: 0
 --- !u!114 &2680150304822488834
@@ -335,7 +254,21 @@ MonoBehaviour:
   MuzzleFX: {fileID: 2791954120367390584, guid: 1f4d6077aea8e84418753fbbc62d4f4d, type: 3}
   MuzzleFX2: {fileID: 4050997735295280631, guid: 796589ba9a3cdf8469a7eca8e680c875, type: 3}
   timeBetweenShots: 1
---- !u!50 &2680150304822488835
+--- !u!114 &6799997554702260712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680150304822488860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3565f5b208c35a47a77f15d7cd9733e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
+  Ship: {fileID: 2680150304644777655}
+--- !u!50 &2983692838829033002
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -354,7 +287,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &2680150305245546683
 GameObject:

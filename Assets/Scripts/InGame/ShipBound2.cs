@@ -8,13 +8,14 @@ public class ShipBound2 : MonoBehaviour
     private Vector2 screenBounds;
     private float shipWidth;
     private float shipHeight;
+    [SerializeField] private GameObject Ship;
 
     // Start is called before the first frame update
     void Start()
     {
         screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
-        shipWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x; //extents = size of width / 2
-        shipHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y; //extents = size of height / 2
+        shipWidth = Ship.GetComponent<SpriteRenderer>().bounds.extents.x; //extents = size of width / 2
+        shipHeight = Ship.GetComponent<SpriteRenderer>().bounds.extents.y; //extents = size of height / 2
     }
 
     // Update is called once per frame
