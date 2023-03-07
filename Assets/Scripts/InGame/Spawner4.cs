@@ -19,7 +19,7 @@ public class Spawner4 : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(Random.Range(8f, 15f));
+        yield return new WaitForSeconds(Random.Range(3f, 6f));
         float minX = -box.size.x / 2f;
         float maxX = box.size.x / 2f;
         Vector3 temp = transform.position;

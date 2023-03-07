@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Despawner : MonoBehaviour
 {
-     private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
+        if (collision.tag != "Player Shield")
+        { 
+            Destroy(collision.gameObject);
+        }
     }
 }

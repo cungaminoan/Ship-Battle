@@ -21,7 +21,7 @@ public class Spawner2 : MonoBehaviour
 
     IEnumerator SpawnEnemies2()
     {
-        yield return new WaitForSeconds(Random.Range(6f, 12f));
+        yield return new WaitForSeconds(Random.Range(2f, 3f));
         float minX = box.bounds.min.x;
         float maxX = box.bounds.max.x;
         float minY = box.bounds.min.y;
@@ -33,7 +33,7 @@ public class Spawner2 : MonoBehaviour
 
     IEnumerator SpawnEnemies2_1()
     {
-        yield return new WaitForSeconds(Random.Range(0.5f, 6f));
+        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
         float minX = box.bounds.min.x;
         float maxX = box.bounds.max.x;
         float minY = box.bounds.min.y;

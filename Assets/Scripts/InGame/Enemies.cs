@@ -42,7 +42,7 @@ public class Enemies : MonoBehaviour
         scoreSystem = GameObject.Find("GamePlayController").GetComponent<ScoreSystem>();
         pos = transform.position;
         axis = transform.right;
-        startTime = Time.time;
+        startTime = Time.time; // Time from game start
 
     }
 

@@ -10,19 +10,23 @@ public class Ship : MonoBehaviour
     [SerializeField] private GameObject shockBlast;
 
     private PowerUpSystem AbilityIcon;
-    private float cooldown;
+    public float cooldown, currentCoolDown;
     private float horizontalInput;
     private float verticalInput;
     public Rigidbody2D myBody;
     public SpriteRenderer shipSR;
-    public bool abilityActive = true;
+    public bool abilityActive;
 
     private void Awake()
     {
-        instance= this;
+        abilityActive = true;
+        cooldown = 0;
+        currentCoolDown = CheatCodeStats.instance.cooldown;
+        instance = this;
     }
     private void Start()
     {
+        
         AbilityIcon = GameObject.Find("GamePlayController").GetComponent<PowerUpSystem>();
     }
     private void Update()
@@ -52,7 +56,7 @@ public class Ship : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.F))
         {
         // Ability here 
-        cooldown = 8f; 
+        cooldown = currentCoolDown; 
         Debug.Log("Shock wave cool down");
         Instantiate(shockBlast, transform.position, transform.rotation);
         AbilityIcon.AbilityIcon();
