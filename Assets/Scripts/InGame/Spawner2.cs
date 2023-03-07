@@ -22,21 +22,24 @@ public class Spawner2 : MonoBehaviour
     IEnumerator SpawnEnemies2()
     {
         yield return new WaitForSeconds(Random.Range(6f, 12f));
-        float minY = -box.size.y / 2f;
-        float maxY = box.size.y / 2f;
-        Vector3 temp = transform.position;
-        temp.y = Random.Range(minY, maxY);
-        Instantiate(enemies2, temp, Quaternion.identity);
+        float minX = box.bounds.min.x;
+        float maxX = box.bounds.max.x;
+        float minY = box.bounds.min.y;
+        float maxY = box.bounds.max.y;
+        Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0f);
+        Instantiate(enemies2, spawnPosition, Quaternion.identity);
         StartCoroutine(SpawnEnemies2());
     }
+
     IEnumerator SpawnEnemies2_1()
     {
         yield return new WaitForSeconds(Random.Range(0.5f, 6f));
-        float minY = -box.size.y / 2f;
-        float maxY = box.size.y / 2f;
-        Vector3 temp = transform.position;
-        temp.y = Random.Range(minY, maxY);
-        Instantiate(enemies2_1, temp, Quaternion.identity);
+        float minX = box.bounds.min.x;
+        float maxX = box.bounds.max.x;
+        float minY = box.bounds.min.y;
+        float maxY = box.bounds.max.y;
+        Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0f);
+        Instantiate(enemies2_1, spawnPosition, Quaternion.identity);
         StartCoroutine(SpawnEnemies2_1());
     }
 }
